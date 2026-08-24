@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-# E-Learnign
 =======
 # 🎓 E-Learning Platform
 
@@ -96,4 +94,3 @@ A robust, scalable, and user-friendly E-Learning management system built to stre
 ## 👨‍💻 Author
 **Eslam Mohamed**
 * LinkedIn: [@Eslam Aboalnaga](www.linkedin.com/in/eslam-aboalnaga)
->>>>>>> e88e6e002838625fb5f0a9f196b8de5820913c17
