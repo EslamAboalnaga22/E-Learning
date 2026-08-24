@@ -1,4 +1,3 @@
-//using ELearning.Infrastructure.RepositoriesClient;
 using ELearningWASM;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;

@@ -1,4 +1,6 @@
-﻿namespace ELearning.Infrastructure
+﻿using ELearning.Core.Configuration;
+
+namespace ELearning.Infrastructure
 {
     public static class DependencyInjectionServer
     {
@@ -39,7 +41,7 @@
                 });
 
             // Forget Password & Reset Password
-            //services.Configure<EmailConfiguration>(builder.Configuration.GetSection("EmailConfiguration"));
+            services.Configure<EmailConfiguration>(configuration.GetSection("EmailConfiguration"));
 
             services.Configure<DataProtectionTokenProviderOptions>(options =>
                 options.TokenLifespan = TimeSpan.FromHours(2));
@@ -57,7 +59,7 @@
             });
 
             services.AddScoped<IUnitOfWrok, UnitOfWork>();
-            services.AddScoped<IEmailSender, EmailSender>();
+            services.AddScoped<IMailRepository, MailRepository>();
 
             services.AddExceptionHandler<GlobalErrorHandlling>();
             services.AddProblemDetails();

@@ -1,7 +1,8 @@
 ﻿namespace ELearning.Infrastructure.Repositories
 {
-    public class AuthRepository(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, JWT jwt, IEmailSender emailSender) : IAuthRepository
+    public class AuthRepository(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, JWT jwt, IMailRepository email) : IAuthRepository
     {
+        private readonly IMailRepository email = email;
         private async Task<JwtSecurityToken> CreateJwtToken(ApplicationUser user)
         {
             var userClaims = await userManager.GetClaimsAsync(user);
@@ -201,10 +202,15 @@
 
             var token = await userManager.GeneratePasswordResetTokenAsync(user);
 
-            var passwrodResetLink = $"{model.WebLink}?email={model.Email}&token={token}";
+            var result = await email.SendMailAsync(model.Email, token, model.WebLink);
+
+            if(result is false)
+                return false;
+
+            //var passwrodResetLink = $"{model.WebLink}?email={model.Email}&token={token}";
 
             //await emailSender.SendEmailAsync(user.Email, "Reset Password", $"<P>Hi {user.UserName}, </P> <P>{token}</p>");
-            await emailSender.SendEmailAsync(user.Email, "Reset Password", $"<P>Hi {user.UserName}, </P> <P>To reset your password please <a href={passwrodResetLink}>CLICK HERE</a></p> <P>{token}</p>");
+            //await emailSender.SendEmailAsync(user.Email, "Reset Password", $"<P>Hi {user.UserName}, </P> <P>To reset your password please <a href={passwrodResetLink}>CLICK HERE</a></p> <P>{token}</p>");
 
             return true;
         }
