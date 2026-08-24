@@ -16,7 +16,7 @@ A robust, scalable, and user-friendly E-Learning management system built to stre
 * **Framework:** .NET Core / ASP.NET Web API (C#)
 * **Frontend:** Blazor, HTML5, CSS3, JavaScript, and Bootstrap
 * **Database:** SQL Server (Relational Database Design)
-* **Architecture:** N-Tier Architecture / Clean Architecture
+* **Architecture:**  Clean Architecture / CQRS 
 * **Design Patterns:** Repository Pattern & Unit of Work
 * **Security:** Identity Framework for Authentication & Role-based Authorization
 
