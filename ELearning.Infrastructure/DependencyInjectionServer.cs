@@ -52,8 +52,10 @@ namespace ELearning.Infrastructure
                 {
                     opt.AllowAnyMethod();
                     opt.AllowAnyHeader();
-                    opt.WithOrigins("https://localhost:7233");
-                    opt.WithOrigins("http://localhost:5122");
+                    //opt.WithOrigins("https://localhost:7233");
+                    //opt.WithOrigins("http://localhost:5122");
+                    opt.WithOrigins("https://192.168.1.47:7233");
+                    opt.WithOrigins("http://192.168.1.47:5122");
                     opt.AllowCredentials();
                 });
             });

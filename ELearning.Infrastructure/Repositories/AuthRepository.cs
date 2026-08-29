@@ -1,4 +1,6 @@
-﻿namespace ELearning.Infrastructure.Repositories
+﻿using Microsoft.AspNetCore.WebUtilities;
+
+namespace ELearning.Infrastructure.Repositories
 {
     public class AuthRepository(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, JWT jwt, IMailRepository email) : IAuthRepository
     {
@@ -202,7 +204,9 @@
 
             var token = await userManager.GeneratePasswordResetTokenAsync(user);
 
-            var result = await email.SendMailAsync(model.Email, token, model.WebLink);
+            var safeToken = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token));
+
+            var result = await email.SendMailAsync(model.Email, safeToken, model.WebLink);
 
             if(result is false)
                 return false;
@@ -221,7 +225,10 @@
             if (user is null)
                 return false;
 
-            var result = await userManager.ResetPasswordAsync(user, model.Token, model.Password);
+
+            var originalToken = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(model.Token));
+
+            var result = await userManager.ResetPasswordAsync(user, originalToken, model.Password);
 
             return result.Succeeded;
         }

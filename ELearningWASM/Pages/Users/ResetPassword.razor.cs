@@ -1,6 +1,9 @@
 ﻿using ELearning.Core.Dtos.Authentication;
 using ELearning.Core.InterfacesClient;
+using ELearning.Infrastructure.RepositoriesClient;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.WebUtilities;
+using System.Text;
 
 namespace ELearningWASM.Pages.Users
 {
@@ -28,7 +31,7 @@ namespace ELearningWASM.Pages.Users
         public async Task Reset()
         {
             ResetPasswordModel.Email = Email;
-            ResetPasswordModel.Token = Token.Replace(" ","+");
+            ResetPasswordModel.Token = Token.Replace(" ", "+");
 
             await AuthenticationService.ResetPassword(ResetPasswordModel);
 

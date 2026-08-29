@@ -163,6 +163,11 @@
         {
             var result = await _httpClient.PutAsJsonAsync<ResetPasswordModel>($"api/Auth/ResetPassword", resetPassword);
 
+            if (!result.IsSuccessStatusCode)
+            {
+                throw new Exception("حدث خطأ ما، حاول تاني");
+            }
+
             await GetErrors(result);
         }
     }

@@ -1,5 +1,6 @@
 ﻿namespace ELearning.Api.Controllers
 {
+    
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class AuthController(IUnitOfWrok unitOfWork) : ControllerBase
@@ -134,6 +135,7 @@
             return StatusCode(200, result);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> ForgetPassword(ForgetPasswordModel model)
         {
@@ -148,7 +150,8 @@
             return StatusCode(200, result);
         }
 
-        [HttpPost]
+        [AllowAnonymous]
+        [HttpPut]
         public async Task<IActionResult> ResetPassword(ResetPasswordModel model)
         {
             if (!ModelState.IsValid)
