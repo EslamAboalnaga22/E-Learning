@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-# E-Learnign
 =======
 # 🎓 E-Learning Platform
 
@@ -18,7 +16,7 @@ A robust, scalable, and user-friendly E-Learning management system built to stre
 * **Framework:** .NET Core / ASP.NET Web API (C#)
 * **Frontend:** Blazor, HTML5, CSS3, JavaScript, and Bootstrap
 * **Database:** SQL Server (Relational Database Design)
-* **Architecture:** N-Tier Architecture / Clean Architecture
+* **Architecture:**  Clean Architecture / CQRS 
 * **Design Patterns:** Repository Pattern & Unit of Work
 * **Security:** Identity Framework for Authentication & Role-based Authorization
 
@@ -96,4 +94,3 @@ A robust, scalable, and user-friendly E-Learning management system built to stre
 ## 👨‍💻 Author
 **Eslam Mohamed**
 * LinkedIn: [@Eslam Aboalnaga](www.linkedin.com/in/eslam-aboalnaga)
->>>>>>> e88e6e002838625fb5f0a9f196b8de5820913c17
