@@ -1,9 +1,6 @@
 ﻿using ELearning.Core.Dtos.Authentication;
 using ELearning.Core.InterfacesClient;
-using ELearning.Infrastructure.RepositoriesClient;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.WebUtilities;
-using System.Text;
 
 namespace ELearningWASM.Pages.Users
 {

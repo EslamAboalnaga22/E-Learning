@@ -1,12 +1,10 @@
-﻿using System.Net.Http.Headers;
-
-namespace ELearning.Infrastructure.RepositoriesClient
+﻿namespace ELearning.Infrastructure.RepositoriesClient
 {
     public class AppAuthenticatoinStateProvider(HttpClient httpClient, ILocalStorageService localStorage) : AuthenticationStateProvider
     {
         private readonly HttpClient _httpClient = httpClient;
         private readonly ILocalStorageService _localStorage = localStorage;
-        private readonly AuthenticationState _anonymous = new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
+        private readonly AuthenticationState _anonymous = new(new ClaimsPrincipal(new ClaimsIdentity()));
         public async override Task<AuthenticationState> GetAuthenticationStateAsync()
         {
             if (await _localStorage.GetItemAsync<string>("IsPersistentToken") != "IsPersistent")

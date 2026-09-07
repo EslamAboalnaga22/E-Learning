@@ -2,6 +2,7 @@
   <Project Path="ELearning.Api/ELearning.Api.csproj" />
   <Project Path="ELearning.Application/ELearning.Application.csproj" />
   <Project Path="ELearning.Core/ELearning.Core.csproj" />
+  <Project Path="ELearning.Infrastructure.Client/ELearning.Infrastructure.Client.csproj" Id="5134692a-3172-452e-9fd4-4f51a37810d5" />
   <Project Path="ELearning.Infrastructure/ELearning.Infrastructure.csproj" />
   <Project Path="ELearningWASM/ELearningWASM.csproj" />
 </Solution>

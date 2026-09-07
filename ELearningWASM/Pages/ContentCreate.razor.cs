@@ -1,16 +1,10 @@
 ﻿using ELearning.Core.Dtos.Request;
 using ELearning.Core.Dtos.Response;
-using ELearning.Core.Entities;
 using ELearning.Core.InterfacesClient;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Http;
-using System.IO;
-using System.IO.Compression;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text.Json;
-using static System.Net.WebRequestMethods;
+using Microsoft.AspNetCore.Http.Internal;
 
 namespace ELearningWASM.Pages
 {

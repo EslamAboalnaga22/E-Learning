@@ -6,11 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-	<Target Name="AllowUsingAspNetCoreInBlazorWasm" AfterTargets="ProcessFrameworkReferences">
-		<ItemGroup>
-			<UnavailableRuntimePack Remove="Microsoft.AspNetCore.App" />
-		</ItemGroup>
-	</Target>
 
   <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
@@ -19,13 +14,14 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="10.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.11" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.11" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ELearning.Application\ELearning.Application.csproj" />
-    <ProjectReference Include="..\ELearning.Infrastructure\ELearning.Infrastructure.csproj" />
+    <ProjectReference Include="..\ELearning.Infrastructure.Client\ELearning.Infrastructure.Client.csproj" />
   </ItemGroup>
 
 </Project>
